@@ -25,7 +25,7 @@ typedef enum {
     LONG_SHORT,
     LONG_LONG
 } beep_type_e;
-
+extern beeper_dev_t beeper_dev;
 void beeper_beep(beep_type_e type);
 
 void _beeper_off();
