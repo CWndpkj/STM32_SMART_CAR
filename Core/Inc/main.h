@@ -67,8 +67,9 @@ void Error_Handler(void);
 #define PATROL_RIGHT_1_GPIO_Port GPIOC
 #define BEEPER_Pin GPIO_PIN_0
 #define BEEPER_GPIO_Port GPIOA
-#define FAN_Pin GPIO_PIN_1
-#define FAN_GPIO_Port GPIOA
+#define NEC_Pin GPIO_PIN_1
+#define NEC_GPIO_Port GPIOA
+#define NEC_EXTI_IRQn EXTI1_IRQn
 #define OBSTACLE_RIGHT_Pin GPIO_PIN_4
 #define OBSTACLE_RIGHT_GPIO_Port GPIOA
 #define OBSTACLE_RIGHT_EXTI_IRQn EXTI4_IRQn

@@ -1,4 +1,7 @@
 #include "motor.h"
+
+#include <stdio.h>
+
 #include "main.h"
 
 extern TIM_HandleTypeDef htim4;
@@ -10,7 +13,7 @@ motor_dev_t motor_dev;
  * 
  * @param angle 转动的角度，值为负为逆时针转动，值为正为顺时针转动
  */
-void motor_turn_angle(int angle) {
+void motor_turn_angle(int8_t angle) {
     int16_t left_speed, right_speed;
     if (angle > 0) {
         left_speed = 500;
@@ -18,6 +21,7 @@ void motor_turn_angle(int angle) {
     } else {
         left_speed = 0;
         right_speed = 500;
+        angle = -angle;
     }
     motor_timestamp_t timestamp = {
         .declipse = angle * RATIO,

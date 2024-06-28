@@ -22,6 +22,6 @@ void motor_ctl_right(int speed);
 
 void motor_break(void);
 
-void motor_turn_angle(int angle);
+void motor_turn_angle(int8_t angle);
 
 #endif // __MOTOR_H

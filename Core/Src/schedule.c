@@ -7,7 +7,6 @@
 #include "hc_sr04.h"
 #include "beeper.h"
 #include "control.h"
-#include "main.h"
 #include "motor.h"
 extern hc_sr04_dev_t hc_sr04_dev;
 extern TIM_HandleTypeDef htim2;
@@ -80,16 +79,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
         }
 
         //小车运动状态切换
-        if (turn_left_flag) {
-            if (!(turn_left_flag & 0x6)) {
-                //载入左转指令
-                motor_turn_angle(-90);
-            }
-        } else if (turn_right_flag) {
-            if (!(turn_right_flag & 0x6)) {
-                //载入右转指令
-                motor_turn_angle(90);
-            }
+        if (turn_left_flag == 0x1) {
+            //载入左转指令
+            motor_turn_angle(-90);
+            turn_left_flag |= 0x1 << 1;
+        }
+        if (turn_right_flag == 0x1) {
+            //载入右转指令
+            motor_turn_angle(90);
+            turn_right_flag |= 0x1 << 1;
         }
     }
 }
