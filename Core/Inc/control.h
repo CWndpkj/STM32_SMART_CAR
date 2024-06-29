@@ -9,7 +9,20 @@
 extern uint8_t turn_left_flag;
 extern uint8_t turn_right_flag;
 
-void control_tick();
+typedef enum {
+    LEFT,
+    RIGHT,
+    BACKWARD
+} direction_t;
+
+
+void set_nec_ctl(uint8_t flag);
+
+uint8_t control_decide_direction();
+
+void control_auto_tick();
+
+void control_patrol_tick();
 
 void control_turn_left_90();
 

@@ -67,9 +67,8 @@ void Error_Handler(void);
 #define PATROL_RIGHT_1_GPIO_Port GPIOC
 #define BEEPER_Pin GPIO_PIN_0
 #define BEEPER_GPIO_Port GPIOA
-#define NEC_Pin GPIO_PIN_1
-#define NEC_GPIO_Port GPIOA
-#define NEC_EXTI_IRQn EXTI1_IRQn
+#define FAN_Pin GPIO_PIN_1
+#define FAN_GPIO_Port GPIOA
 #define OBSTACLE_RIGHT_Pin GPIO_PIN_4
 #define OBSTACLE_RIGHT_GPIO_Port GPIOA
 #define OBSTACLE_RIGHT_EXTI_IRQn EXTI4_IRQn
@@ -87,6 +86,9 @@ void Error_Handler(void);
 #define LED_R_GPIO_Port GPIOB
 #define PATROL_RIGHT_2_Pin GPIO_PIN_12
 #define PATROL_RIGHT_2_GPIO_Port GPIOB
+#define NEC_Pin GPIO_PIN_13
+#define NEC_GPIO_Port GPIOB
+#define NEC_EXTI_IRQn EXTI15_10_IRQn
 #define SERVOR_Pin GPIO_PIN_11
 #define SERVOR_GPIO_Port GPIOA
 #define ECHO_Pin GPIO_PIN_12

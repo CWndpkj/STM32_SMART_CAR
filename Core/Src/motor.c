@@ -10,17 +10,33 @@ motor_dev_t motor_dev;
 #define RATIO 5
 
 /**
+ *
+ * @param speed 运动的方向及速度,符号为正位前进，为负为后退
+ * @param declipse 持续运动的时间
+ */
+void motor_move(int speed, uint8_t declipse) {
+    motor_timestamp_t timestamp = {
+        .left_speed = speed,
+        .right_speed = speed,
+        .declipse = declipse
+    };
+    motor_dev.timestamp_list_len++;
+    motor_dev.timestamp_list[motor_dev.timestamp_list_len - 1] = timestamp;
+}
+
+
+/**
  * 
  * @param angle 转动的角度，值为负为逆时针转动，值为正为顺时针转动
  */
-void motor_turn_angle(int8_t angle) {
+void motor_turn_angle(int angle) {
     int16_t left_speed, right_speed;
     if (angle > 0) {
         left_speed = 500;
         right_speed = 0;
     } else {
         left_speed = 0;
-        right_speed = 500;
+        right_speed = 0;
         angle = -angle;
     }
     motor_timestamp_t timestamp = {
@@ -30,10 +46,6 @@ void motor_turn_angle(int8_t angle) {
     };
     motor_dev.timestamp_list_len++;
     motor_dev.timestamp_list[motor_dev.timestamp_list_len - 1] = timestamp;
-
-    //开启电机
-    motor_ctl_left(left_speed);
-    motor_ctl_right(right_speed);
 }
 
 
@@ -42,7 +54,7 @@ void motor_turn_angle(int8_t angle) {
  * @param speed 转动速度，数值为正时为前进，数值为负时为后退
  */
 void motor_ctl_left(int speed) {
-    if (speed > 0) {
+    if (speed >= 0) {
         HAL_GPIO_WritePin(MOTOR_LEFT_CTL2_GPIO_Port, MOTOR_LEFT_CTL2_Pin, GPIO_PIN_SET); // AIN2
         HAL_GPIO_WritePin(MOTOR_LEFT_CTL1_GPIO_Port, MOTOR_LEFT_CTL1_Pin, GPIO_PIN_RESET); // AIN1
     } else {
@@ -62,7 +74,7 @@ void motor_ctl_left(int speed) {
 }
 
 void motor_ctl_right(int speed) {
-    if (speed > 0) {
+    if (speed >= 0) {
         HAL_GPIO_WritePin(MOTOR_RIGHT_CTL2_GPIO_Port, MOTOR_RIGHT_CTL2_Pin, GPIO_PIN_SET); // BIN2
         HAL_GPIO_WritePin(MOTOR_RIGHT_CTL1_GPIO_Port, MOTOR_RIGHT_CTL1_Pin, GPIO_PIN_RESET); // BIN1
     } else {

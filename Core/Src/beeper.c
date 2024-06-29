@@ -18,11 +18,11 @@ void _beeper_load(uint16_t n_ms, uint8_t status) {
 }
 
 void _beeper_off() {
-    HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(BEEPER_GPIO_Port,BEEPER_Pin, GPIO_PIN_SET);
 }
 
 void _beeper_on() {
-    HAL_GPIO_WritePin(LED_B_GPIO_Port,LED_B_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(BEEPER_GPIO_Port,BEEPER_Pin, GPIO_PIN_RESET);
 }
 
 

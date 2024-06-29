@@ -5,11 +5,15 @@
 #include "global_it_cb.h"
 
 #include <stdio.h>
+#include <sys/time.h>
 
+#include "delay.h"
 #include "main.h"
 #include "stm32f1xx_hal.h"
 #include "hc_sr04.h"
 #include "nec.h"
+extern TIM_HandleTypeDef htim3;
+uint8_t count = 0;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
     switch (GPIO_Pin) {
@@ -80,35 +84,69 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
          * 0x0 空闲状态,0x1开始接收引导吗9ms高电平,0x2开始接收引导码4.5m低电平
          * 0x3~0x4接收用户码第一字节,0x4~0x5接收用户码第二字节
          * 0x5~0x6接收用户码第三字节,0x6~0x7接收用户码第四字节
-         *
+         * ...
          */
         case NEC_Pin: {
-            //nec 红外解码
-            switch (nec_state_machine) {
-                case 0x0: {
-                    //之前为空闲状态
-                    nec_state_machine = 0x1;
-                    //9ms跳过
-                    break;
+            // nec 红外解码
+            if (nec_state_machine == 0x0) {
+                //之前为空闲状态
+                nec_state_machine++;
+                TIM3->CNT = 0;
+            } else if (nec_state_machine == 0x1) {
+                uint32_t counter = __HAL_TIM_GetCounter(&htim3);
+                if (counter > 8000 && counter < 15000) {
+                    //之前为引导码9ms低电平
+                    nec_state_machine++;
+                    TIM3->CNT = 0;
+                } else {
+                    //接收错误，重新接收
+                    printf("%ld\r\n", counter);
+                    nec_state_machine = 0;
                 }
-                case 0x1: {
-                    //之前为引导码9ms高电平
-                    nec_state_machine = 0x2;
-                    //4.5m跳过
-                    break;
+            } else if (nec_state_machine == 0x2) {
+                uint32_t counter = __HAL_TIM_GetCounter(&htim3);
+                printf("counter:%d\r\n", counter);
+                if (counter > 3000) {
+                    //引导码4.5ms高电平
+                    nec_state_machine++;
+                    //清空nec_data,开始新的数据接收
+                    nec_data = 0;
+                } else if (counter < 3000 && counter > 1500) {
+                    //重复码2.25ms
+                    nec_state_machine = 66;
+                    printf("rcved repeat\r\n");
+                } else {
+                    //接收错误
+                    printf("wrong rcv\r\n");
+                    nec_state_machine = 0;
                 }
-                case 0x2: {
-                    //之前为引导码4.5ms低电平
-                    nec_state_machine = 0x3;
-                    //记录该时刻的时间戳
-                    nec_timestamp = TIM2->CNT;
-                    break;
+            } else if (nec_state_machine <= 65) {
+                nec_state_machine++;
+                if (nec_state_machine % 2 == 1) {
+                    //接收的是一字节的低电平部分
+                    //定时器准备
+                    __HAL_TIM_SetCounter(&htim3, 0);
+                } else {
+                    //接收的是一字节的高电平部分
+                    //读取定时器的值
+                    uint32_t counter = __HAL_TIM_GetCounter(&htim3);
+                    printf("%d\r\n", counter);
+                    if (counter > 1000) {
+                        //该bit的值为1
+                        nec_data |= (0x80000000) >> ((nec_state_machine + 3) / 2 - 3);
+                    }
                 }
-                case 0x3:{
-
-                }
-
+            } else if (nec_state_machine == 66) {
+                printf("rcv complete:%x\r\n", nec_data);
+                //一次完整的传输过程，所有值复位
+                nec_data_ready = 1;
+                nec_state_machine = 0;
+            } else {
+                printf("rcv_error:%d\r\n", nec_state_machine);
+                //接收错误
+                nec_state_machine = 0;
             }
+            break;
         }
         default:
             break;
