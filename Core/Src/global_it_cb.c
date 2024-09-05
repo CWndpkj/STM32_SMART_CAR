@@ -11,6 +11,7 @@
 #include "main.h"
 #include "stm32f1xx_hal.h"
 #include "hc_sr04.h"
+#include "motor.h"
 #include "nec.h"
 extern TIM_HandleTypeDef htim3;
 uint8_t count = 0;
@@ -20,6 +21,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
         case OBSTACLE_LEFT_Pin: {
             //左红外避障中断
             // printf("left obstacle triggered\r\n");
+                break;
+                motor_ctl_left(100);
+                motor_ctl_left(200);
             break;
         }
         case OBSTACLE_RIGHT_Pin: {

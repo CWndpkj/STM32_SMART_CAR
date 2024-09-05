@@ -16,49 +16,19 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug-arm-none-eabi-gcc" ENABLED="true" CONFIG_NAME="Debug" TOOLCHAIN_NAME="arm-none-eabi-gcc" />
+      <configuration PROFILE_NAME="Debug-embedded" ENABLED="true" CONFIG_NAME="Debug" TOOLCHAIN_NAME="embedded" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="780c2719-718e-4390-8976-dd5032d7f6c8" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/control.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/control.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/fan.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/fan.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/main.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/motor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/nec.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/nec.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/rgb_led.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/rgb_led.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/stm32f1xx_it.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Src/beeper.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/beeper.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/control.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/control.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/global_it_cb.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/global_it_cb.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/motor.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/motor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/nec.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/nec.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/rgb_led.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/rgb_led.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/schedule.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/schedule.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/servor.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/servor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/stm32f1xx_hal_msp.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/stm32f1xx_hal_msp.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/stm32f1xx_it.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/.cmake/api/v1/reply/index-2024-06-28T02-26-06-0545.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/clion-Debug-arm-none-eabi-gcc-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/clion-Debug-arm-none-eabi-gcc-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/control.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/control.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/fan.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/fan.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/global_it_cb.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/global_it_cb.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/motor.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/motor.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/rgb_led.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/rgb_led.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/schedule.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/schedule.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/stm32f1xx_it.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/CMakeFiles/smart_car.elf.dir/Core/Src/stm32f1xx_it.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.hex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-arm-none-eabi-gcc/smart_car.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_car.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/smart_car.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +39,7 @@
     <option name="formatViaClangd" value="false" />
     <option name="indexerUseModules" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-arm-none-eabi-gcc" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-embedded" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -111,49 +81,54 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "OpenOCD 下载并运行.OCD smart_car.executor": "Run",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.advertisement.text.has.clang-format": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/Code/CLion_Project/smart_car",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CMakeSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;CMake 应用程序.smart_car.elf.executor&quot;: &quot;Debug&quot;,
+    &quot;OpenOCD 下载并运行.OCD smart_car.executor&quot;: &quot;Run&quot;,
+    &quot;OpenOCD 下载并运行.flash.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/29332/Desktop/smart_car&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Code\CLion_Project\smart_car\Core\Inc" />
       <recent name="F:\Code\CLion_Project\smart_car\Core\Src" />
     </key>
   </component>
-  <component name="RunManager" selected="OpenOCD 下载并运行.OCD smart_car">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="smart_car.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="smart_car" TARGET_NAME="smart_car.elf" CONFIG_NAME="Debug-arm-none-eabi-gcc" RUN_TARGET_PROJECT_NAME="smart_car" RUN_TARGET_NAME="smart_car.elf">
+  <component name="RunManager" selected="OpenOCD 下载并运行.flash">
+    <configuration name="smart_car.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="smart_car" TARGET_NAME="smart_car.elf" CONFIG_NAME="Debug-embedded" RUN_TARGET_PROJECT_NAME="smart_car" RUN_TARGET_NAME="smart_car.elf">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="flash" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="smart_car" TARGET_NAME="smart_car.elf" CONFIG_NAME="Debug-embedded" version="1" RUN_TARGET_PROJECT_NAME="smart_car" RUN_TARGET_NAME="smart_car.elf">
+      <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="C:\Users\29332\Desktop\smart_car\stm32f103c8_blue_pill.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
+        <debugger kind="GDB" isBundled="true" />
+      </openocd>
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake 应用程序.smart_car.elf" />
-      <item itemvalue="OpenOCD 下载并运行.OCD smart_car" />
+      <item itemvalue="OpenOCD 下载并运行.flash" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -177,7 +152,12 @@
       <workItem from="1719541395763" duration="5898000" />
       <workItem from="1719556625537" duration="22636000" />
       <workItem from="1719582603822" duration="1482000" />
-      <workItem from="1719622023370" duration="5759000" />
+      <workItem from="1719622023370" duration="7197000" />
+      <workItem from="1719643691889" duration="4719000" />
+      <workItem from="1719648487481" duration="2837000" />
+      <workItem from="1719656129506" duration="6313000" />
+      <workItem from="1719662902671" duration="1528000" />
+      <workItem from="1719664452798" duration="3901000" />
     </task>
     <task id="LOCAL-00001" summary="basic framework">
       <option name="closed" value="true" />

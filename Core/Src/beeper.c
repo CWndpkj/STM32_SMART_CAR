@@ -30,30 +30,30 @@ void beeper_beep(beep_type_e type) {
     _beeper_on();
     switch (type) {
         case SHORT:
-            _beeper_load(10, 1);
+            _beeper_load(20, 1);
             break;
         case LONG:
-            _beeper_load(50, 1);
+            _beeper_load(100, 1);
             break;
         case SHORT_SHORT:
-            _beeper_load(10, 1);
+            _beeper_load(20, 1);
             _beeper_load(100, 0);
-            _beeper_load(10, 1);
+            _beeper_load(20, 1);
             break;
         case SHORT_LONG:
-            _beeper_load(10, 1);
+            _beeper_load(20, 1);
             _beeper_load(100, 0);
-            _beeper_load(50, 1);
+            _beeper_load(100, 1);
             break;
         case LONG_SHORT:
-            _beeper_load(50, 1);
+            _beeper_load(100, 1);
             _beeper_load(100, 0);
-            _beeper_load(10, 1);
+            _beeper_load(20, 1);
             break;
         case LONG_LONG:
-            _beeper_load(50, 1);
+            _beeper_load(100, 1);
             _beeper_load(100, 0);
-            _beeper_load(50, 1);
+            _beeper_load(100, 1);
             break;
     }
 }

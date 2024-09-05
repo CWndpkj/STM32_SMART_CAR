@@ -32,11 +32,11 @@ void motor_move(int speed, uint8_t declipse) {
 void motor_turn_angle(int angle) {
     int16_t left_speed, right_speed;
     if (angle > 0) {
-        left_speed = 500;
+        left_speed = 400;
         right_speed = 0;
     } else {
         left_speed = 0;
-        right_speed = 0;
+        right_speed = 400;
         angle = -angle;
     }
     motor_timestamp_t timestamp = {

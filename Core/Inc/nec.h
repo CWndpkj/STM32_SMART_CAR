@@ -20,7 +20,7 @@ extern uint8_t nec_data_ready;
 #define NEC_RIGHT 0x60
 #define NEC_BACKWARD 0x90
 #define NEC_STOP 0xA0
-
+#define NEC_NUMBER3 0x48
 void nec_init();
 
 uint8_t nec_is_data_ready();

@@ -7,13 +7,19 @@
 #include "hc_sr04.h"
 #include "beeper.h"
 #include "control.h"
+#include "delay.h"
 #include "motor.h"
 #include "nec.h"
+#include "rgb_led.h"
+#include "fan.h"
 extern hc_sr04_dev_t hc_sr04_dev;
 extern TIM_HandleTypeDef htim2;
 extern uint8_t nec_ctl;
 static uint16_t beeper_declipse = 2000;
 extern TIM_HandleTypeDef htim3;
+
+static uint8_t rgb_led_flag;
+static uint8_t fan_flag;
 //定时器2中断，可用于按键扫描，固定间隔时间执行某个任务等
 //note:可能包含执行时间较长的函数，不可用于对时间精度要求较高的函数
 void schedule_start() {
@@ -100,6 +106,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                     beeper_beep(SHORT);
                 }
                 nec_ctl = !nec_ctl;
+                motor_break();
                 return;
             }
             if (nec_ctl) {
@@ -118,14 +125,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                     }
                     case NEC_LEFT: {
                         printf("nec turn left\r\n");
-                        motor_ctl_left(300);
-                        motor_ctl_right(-300);
+                        motor_ctl_left(0);
+                        motor_ctl_right(300);
+                            delay_ms(200);
+                            motor_break();
                         break;
                     }
                     case NEC_RIGHT: {
                         printf("nec turn right\r\n");
                         motor_ctl_left(300);
-                        motor_ctl_right(-300);
+                        motor_ctl_right(0);
+                            delay_ms(200);
+                            motor_break();
                         break;
                     }
                     case NEC_STOP: {
@@ -133,6 +144,39 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                         motor_break();
                         break;
                     }
+                case NEC_LIGHT:
+                        {
+                            rgb_led_flag++;
+                            if (rgb_led_flag==4)
+                            {
+                                rgb_led_flag=0;
+                            }
+                            LED_Config_t config={0};
+                           if(rgb_led_flag==1)
+                           {
+                               config.R_value=1;
+                           }else if (rgb_led_flag==2)
+                           {
+                               config.G_value=1;
+                           }else if (rgb_led_flag==3)
+                           {
+                               config.B_value=1;
+                           }
+                            led_config(config);
+                            break;
+                        }
+                case NEC_NUMBER3 :
+                        {
+                            if (fan_flag)
+                            {
+                                fan_on();
+                            }else
+                            {
+                                fan_off();
+                            }
+                            fan_flag=!fan_flag;
+                            break;
+                        }
                     default:
                         break;
                 }
